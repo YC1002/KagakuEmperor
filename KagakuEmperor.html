@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>無機化学の悪魔</title>
+
+<style>
+body{
+    font-family:"Yu Gothic",sans-serif;
+    max-width:900px;
+    margin:0 auto;
+    padding:15px;
+    background:white;
+    color:black;
+    text-align:center;
+}
+
+h1{
+    font-size:1.8rem;
+    margin-bottom:25px;
+}
+
+h2{
+    font-size:1.3rem;
+    margin-top:40px;
+    margin-bottom:15px;
+    border-bottom:2px solid #ddd;
+    padding-bottom:8px;
+}
+
+.controls{
+    margin-bottom:20px;
+}
+
+button{
+    padding:8px 16px;
+    margin:4px;
+    border:none;
+    border-radius:6px;
+    background:#f0f0f0;
+    cursor:pointer;
+    font-size:0.9rem;
+}
+
+button:hover{
+    background:#dddddd;
+}
+
+/* 表を中央配置 */
+.tableContainer{
+    display:flex;
+    justify-content:center;
+    overflow-x:auto;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    max-width:850px;
+    font-size:0.85rem;
+    margin-bottom:30px;
+}
+
+th,td{
+    border:1px solid #cccccc;
+    padding:8px 6px;
+    text-align:center;
+    vertical-align:middle;
+    line-height:1.4;
+}
+
+th{
+    background:#f5f5f5;
+}
+
+.hidden{
+    position:relative;
+    color:transparent;
+    cursor:pointer;
+    user-select:none;
+}
+
+.hidden::after{
+    content:"";
+    position:absolute;
+    left:12%;
+    right:12%;
+    top:50%;
+    height:20px;
+    background:#ff227e;
+    transform:translateY(-50%);
+}
+
+.hidden.show{
+    color:black;
+}
+
+.hidden.show::after{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    h1{
+        font-size:1.5rem;
+    }
+
+    h2{
+        font-size:1.1rem;
+    }
+
+    table{
+        font-size:0.72rem;
+    }
+
+    th,td{
+        padding:6px 4px;
+    }
+
+    button{
+        font-size:0.8rem;
+        padding:7px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>無機化学の悪魔</h1>
+
+<div class="controls">
+
+<button onclick="showAll()">
+全て表示
+</button>
+
+<button onclick="hideAll()">
+全て隠す
+</button>
+
+</div>
+
+<h2>錯イオン</h2>
+
+<table class="tableContainer">
+
+<tr>
+<th>配位子</th>
+<th>金属イオン</th>
+<th>配位数</th>
+<th>化学式</th>
+<th>名称</th>
+<th>形状・特徴</th>
+</tr>
+
+<tr>
+<td>アンモニア (NH<sub>3</sub>)</td>
+<td class="hidden">Ag<sup>+</sup></td>
+<td>2</td>
+<td class="hidden">[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup></td>
+<td>ジアンミン銀(I)イオン</td>
+<td>直線形</td>
+</tr>
+
+<tr>
+<td>アンモニア (NH<sub>3</sub>)</td>
+<td class="hidden">Cu<sup>2+</sup></td>
+<td>4</td>
+<td class="hidden">[Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup></td>
+<td>テトラアンミン銅(II)イオン</td>
+<td>正方形（深青色）</td>
+</tr>
+
+<tr>
+<td>アンモニア (NH<sub>3</sub>)</td>
+<td class="hidden">Zn<sup>2+</sup></td>
+<td>4</td>
+<td class="hidden">[Zn(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup></td>
+<td>テトラアンミン亜鉛イオン</td>
+<td>正四面体形</td>
+</tr>
+
+<tr>
+<td>OH<sup>-</sup></td>
+<td class="hidden">Al<sup>3+</sup></td>
+<td>6</td>
+<td class="hidden">[Al(OH)<sub>4</sub>]<sup>-</sup></td>
+<td>テトラヒドロキシドアルミン酸イオン</td>
+<td>八面体形</td>
+</tr>
+
+<tr>
+<td>OH<sup>-</sup></td>
+<td class="hidden">Zn<sup>2+</sup></td>
+<td>4</td>
+<td class="hidden">[Zn(OH)<sub>4</sub>]<sup>2-</sup></td>
+<td>テトラヒドロキシド亜鉛酸イオン</td>
+<td>正四面体形</td>
+</tr>
+
+<tr>
+<td>OH<sup>-</sup></td>
+<td class="hidden">Sn<sup>2+</sup></td>
+<td>4</td>
+<td class="hidden">[Sn(OH)<sub>4</sub>]<sup>2-</sup></td>
+<td>テトラヒドロキシドスズ(II)酸イオン</td>
+<td>正四面体形</td>
+</tr>
+
+<tr>
+<td>OH<sup>-</sup></td>
+<td class="hidden">Pb<sup>2+</sup></td>
+<td>4</td>
+<td class="hidden">[Pb(OH)<sub>4</sub>]<sup>2-</sup></td>
+<td>テトラヒドロキシド鉛(II)酸イオン</td>
+<td>正四面体形</td>
+</tr>
+
+<tr>
+<td>CN<sup>-</sup></td>
+<td class="hidden">Fe<sup>2+</sup></td>
+<td>6</td>
+<td class="hidden">[Fe(CN)<sub>6</sub>]<sup>4-</sup></td>
+<td>ヘキサシアニド鉄(II)酸イオン</td>
+<td>正八面体形（黄色）</td>
+</tr>
+
+<tr>
+<td>CN<sup>-</sup></td>
+<td class="hidden">Fe<sup>3+</sup></td>
+<td>6</td>
+<td class="hidden">[Fe(CN)<sub>6</sub>]<sup>3-</sup></td>
+<td>ヘキサシアニド鉄(III)酸イオン</td>
+<td>正八面体形（黄色）</td>
+</tr>
+
+<tr>
+<td>S<sub>2</sub>O<sub>3</sub><sup>2-</sup></td>
+<td class="hidden">Ag<sup>+</sup></td>
+<td>2</td>
+<td class="hidden">[Ag(S<sub>2</sub>O<sub>3</sub>)<sub>2</sub>]<sup>3-</sup></td>
+<td>ビスチオスルファト銀(I)酸イオン</td>
+<td>直線形</td>
+</tr>
+
+</table>
+
+<h2>金属イオンの沈殿</h2>
+
+<table class="tableContainer">
+
+<tr>
+<th>陰イオン</th>
+<th>条件</th>
+<th>金属イオン</th>
+<th>沈殿</th>
+</tr>
+
+<tr>
+<td>Cl<sup>-</sup></td>
+<td>通常</td>
+<td class="hidden">Ag<sup>+</sup>, Pb<sup>2+</sup></td>
+<td class="hidden">
+AgCl（白）<br>
+PbCl<sub>2</sub>（白）
+</td>
+</tr>
+
+<tr>
+<td>SO<sub>4</sub><sup>2-</sup></td>
+<td>通常</td>
+<td class="hidden">
+Ba<sup>2+</sup>, Ca<sup>2+</sup>, Pb<sup>2+</sup>
+</td>
+<td class="hidden">
+BaSO<sub>4</sub>（白）<br>
+CaSO<sub>4</sub>（白）<br>
+PbSO<sub>4</sub>（白）
+</td>
+</tr>
+
+<tr>
+<td>CrO<sub>4</sub><sup>2-</sup></td>
+<td>通常</td>
+<td class="hidden">
+Ag<sup>+</sup>, Ba<sup>2+</sup>, Pb<sup>2+</sup>
+</td>
+<td class="hidden">
+Ag<sub>2</sub>CrO<sub>4</sub>（暗赤）<br>
+BaCrO<sub>4</sub>（黄）<br>
+PbCrO<sub>4</sub>（黄）
+</td>
+</tr>
+
+<tr>
+<td>CO<sub>3</sub><sup>2-</sup></td>
+<td>通常</td>
+<td class="hidden">
+Ba<sup>2+</sup>, Ca<sup>2+</sup>
+</td>
+<td class="hidden">
+BaCO<sub>3</sub>（白）<br>
+CaCO<sub>3</sub>（白）
+</td>
+</tr>
+
+<tr>
+<td>S<sup>2-</sup></td>
+<td>中性・塩基性</td>
+<td class="hidden">
+Zn<sup>2+</sup>, Fe<sup>2+</sup>, Pb<sup>2+</sup>
+</td>
+<td class="hidden">
+ZnS（白）<br>
+FeS（黒）<br>
+PbS（黒）
+</td>
+</tr>
+
+<tr>
+<td>S<sup>2-</sup></td>
+<td>酸性</td>
+<td class="hidden">
+Cu<sup>2+</sup>, Ag<sup>+</sup>
+</td>
+<td class="hidden">
+CuS（黒）<br>
+Ag<sub>2</sub>S（黒）
+</td>
+</tr>
+
+<tr>
+<td>OH<sup>-</sup></td>
+<td>アルカリ金属等を除く</td>
+<td class="hidden">
+Al<sup>3+</sup>, Zn<sup>2+</sup>, Fe<sup>2+</sup>, Fe<sup>3+</sup>, Cu<sup>2+</sup>, Ag<sup>+</sup>
+</td>
+<td class="hidden">
+Al(OH)<sub>3</sub>（白）<br>
+Zn(OH)<sub>2</sub>（白）<br>
+Fe(OH)<sub>2</sub>（緑白）<br>
+Fe(OH)<sub>3</sub>（赤褐）<br>
+Cu(OH)<sub>2</sub>（青白）<br>
+Ag<sub>2</sub>O（褐）
+</td>
+</tr>
+
+</table>
+
+<script>
+
+document.querySelectorAll(".hidden")
+.forEach(cell=>{
+
+    cell.addEventListener("click",()=>{
+
+        cell.classList.toggle("show");
+
+    });
+
+});
+
+function showAll(){
+
+    document.querySelectorAll(".hidden")
+    .forEach(x=>x.classList.add("show"));
+
+}
+
+function hideAll(){
+
+    document.querySelectorAll(".hidden")
+    .forEach(x=>x.classList.remove("show"));
+
+}
+
+</script>
+
+</body>
+</html>

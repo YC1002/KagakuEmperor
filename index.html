@@ -209,12 +209,10 @@ svg{
 
 <body>
 
-<body>
-
 <!-- メニュー画面 -->
 <div id="menuScreen">
 
-    <h1 class="menuTitle">高分子の悪魔</h1>
+    <h1 class="menuTitle">化学の帝王</h1>
 
     <button class="menuButton"
     onclick="startMode('polymer')">
@@ -224,6 +222,11 @@ svg{
     <button class="menuButton"
     onclick="startMode('amino')">
         アミノ酸
+    </button>
+
+    <button class="menuButton"
+    onclick="location.href='KagakuEmperor.html'">
+        無機化学
     </button>
 
 </div>
@@ -1031,7 +1034,7 @@ document.getElementById("container")
 
         index++;
 
-        if(index >= polymers.length){
+        if(index >= currentData.length){
             index = 0;
         }
 
