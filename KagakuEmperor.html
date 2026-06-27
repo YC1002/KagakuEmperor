@@ -428,5 +428,14 @@ function hideAll(){
 </div>
 
 
+
+<script>
+function bindHidden(){
+ document.querySelectorAll('.hidden').forEach(cell=>{
+   cell.onclick=()=>cell.classList.toggle('show');
+ });
+}
+bindHidden();
+</script>
 </body>
 </html>
