@@ -367,30 +367,31 @@ Ag<sub>2</sub>O（褐）
 
 <script>
 
-document.querySelectorAll(".hidden")
-.forEach(cell=>{
+function bindHidden() {
+    document.querySelectorAll(".hidden").forEach(cell => {
 
-    cell.addEventListener("click",()=>{
-
-        cell.classList.toggle("show");
+        cell.onclick = function () {
+            this.classList.toggle("show");
+        };
 
     });
+}
 
-});
-
-function showAll(){
+function showAll() {
 
     document.querySelectorAll(".hidden")
-    .forEach(x=>x.classList.add("show"));
+        .forEach(x => x.classList.add("show"));
 
 }
 
-function hideAll(){
+function hideAll() {
 
     document.querySelectorAll(".hidden")
-    .forEach(x=>x.classList.remove("show"));
+        .forEach(x => x.classList.remove("show"));
 
 }
+
+window.onload = bindHidden;
 
 </script>
 
